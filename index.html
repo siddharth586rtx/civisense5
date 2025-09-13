@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CivicReport - Report Civic Issues</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>CivicReport</h1>
+            <p>Crowdsourced Civic Issue Reporting</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="report-section">
+            <h2>Report an Issue</h2>
+            <form id="reportForm" class="report-form">
+                <div class="form-group">
+                    <label for="issueType">Issue Type</label>
+                    <select id="issueType" required>
+                        <option value="">Select issue type</option>
+                        <option value="pothole">Pothole</option>
+                        <option value="streetlight">Broken Streetlight</option>
+                        <option value="garbage">Garbage Collection</option>
+                        <option value="water">Water Issue</option>
+                        <option value="traffic">Traffic Signal</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea id="description" required placeholder="Describe the issue in detail"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="location">Location</label>
+                    <input type="text" id="location" required placeholder="Street address or landmark">
+                </div>
+
+                <div class="form-group">
+                    <label for="priority">Priority</label>
+                    <select id="priority" required>
+                        <option value="low">Low</option>
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="photo">Photo (optional)</label>
+                    <input type="file" id="photo" accept="image/*">
+                </div>
+
+                <button type="submit" class="submit-btn">Submit Report</button>
+            </form>
+        </section>
+
+        <section class="issues-section">
+            <div class="section-header">
+                <h2>Reported Issues</h2>
+                <div class="controls">
+                    <input type="text" id="searchInput" placeholder="Search issues...">
+                    <select id="filterStatus">
+                        <option value="all">All Status</option>
+                        <option value="pending">Pending</option>
+                        <option value="in-progress">In Progress</option>
+                        <option value="resolved">Resolved</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div id="issuesList" class="issues-grid"></div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
